@@ -26,4 +26,3 @@ function rowSumOddNumbers(n) {
     return sum;
   }
   ```
-}

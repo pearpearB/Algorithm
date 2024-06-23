@@ -1,0 +1,29 @@
+# Q.
+[프로그래머스 링크](https://school.programmers.co.kr/learn/courses/30/lessons/178871)
+
+# A.
+```js
+function solution(players, callings) {    
+    const playersMap = players.reduce((acc, player, idx) => {
+        acc.set(player, idx);
+        
+        return acc;
+    }, new Map())
+
+    callings.forEach((player) => {
+        const rank = playersMap.get(player);
+        const looserPlayer = players[rank - 1];
+        
+        players[rank] =  looserPlayer;
+        players[rank - 1] = player;
+        
+        playersMap.set(player, rank - 1);
+        playersMap.set(looserPlayer, rank);
+    })
+    
+    return players;
+}
+```
+
+### tmi.
+.

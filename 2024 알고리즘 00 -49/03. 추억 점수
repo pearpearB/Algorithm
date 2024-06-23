@@ -1,0 +1,19 @@
+# Q.
+[프로그래머스 링크](https://school.programmers.co.kr/learn/courses/30/lessons/176963)
+
+# A.
+```js
+function solution(name, yearning, photo) {
+    const yearningMap = name.reduce((acc, cur, idx) => {
+        acc.set(cur, yearning[idx]);
+        return acc;
+    }, new Map());
+    
+    return photo.map((names) => (names.reduce((acc, cur) => {
+        return acc + (yearningMap.get(cur) ?? 0);
+    }, 0)));
+}
+```
+
+### tmi.
+.

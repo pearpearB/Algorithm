@@ -1,0 +1,25 @@
+# Q.
+[프로그래머스 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12973)
+
+# A.
+```js
+function solution(str)
+{
+    const stack = [];
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === stack[stack.length - 1]) {
+            stack.pop();
+        } else {
+            stack.push(str[i])
+        }
+    }
+
+    return stack.length ? 0 : 1;
+}
+```
+
+### tmi.
+오랜만에 알고리즘을 푸니 생각대로 잘 되지 않았다. 처음에 재귀함수로 접근했는데 바로 런타임 에러..!! 😵
+
+문제를 다시 보니 문자열 길이가 1,000,000이하의 자연수 였다. 자세히 보자. 문제조건!
